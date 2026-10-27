@@ -317,3 +317,11 @@ footer a:hover { color: var(--gold); }
 /* Rechner: Eingabemaske, Ergebnis und Text darüber gleich breit */
 .calc .wrap { max-width: 640px; }
 .calc .lead { max-width: none; }
+
+/* Menü: auf mittleren Breiten (Tablet) die Textlinks ausblenden, damit alles passt */
+@media (max-width: 899px) { .nav-links .btn.ghost { display: none; } }
+@media (max-width: 400px) {
+  .logo img { height: 25px; }
+  .nav .btn.glow { padding: 0 10px; font-size: 11px; letter-spacing: .04em; }
+}
+@media (max-width: 340px) { .logo img { height: 22px; } .nav .btn.glow { padding: 0 8px; font-size: 10.5px; } }
