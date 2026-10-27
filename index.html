@@ -3,16 +3,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nuvora – Apps für Android und Windows</title>
-  <meta name="description" content="Nuvora entwickelt Apps für Android und Windows: Kalkulation für Trennanlagen, Passwort-Manager, Hausakte, Maus-Statistik und mehr.">
+  <title>Nuvora – Apps für Android &amp; Windows | TrennCalc Trennvorhang</title>
+  <meta name="description" content="Apps für Android und Windows: TrennCalc berechnet Gewicht und Hubgewicht von Trennvorhängen für Sporthallen und Turnhallen. Dazu MouseMeter und mehr.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Nuvora – Apps für Android und Windows">
-  <meta property="og:description" content="Praktische Apps für Alltag und Beruf. Entwickelt von Alex.">
+  <meta property="og:title" content="Nuvora – Apps für Android &amp; Windows">
+  <meta property="og:description" content="Praktische Apps für Alltag und Beruf: Trennvorhang-Rechner TrennCalc, MouseMeter und weitere Apps. Entwickelt von Alex.">
+  <meta property="og:url" content="https://nuvoraone-source.github.io/">
+  <meta property="og:site_name" content="Nuvora">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://nuvoraone-source.github.io/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nuvora Logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nuvoraone-source.github.io/">
+  <link rel="alternate" hreflang="de" href="https://nuvoraone-source.github.io/">
+  <link rel="alternate" hreflang="en" href="https://nuvoraone-source.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nuvoraone-source.github.io/">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0b'/%3E%3Ctext x='32' y='46' font-family='Arial' font-size='40' font-weight='700' text-anchor='middle' fill='%23c9a84c'%3EN%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nuvoraone-source.github.io/#org",
+      "name": "Nuvora",
+      "url": "https://nuvoraone-source.github.io/",
+      "logo": "https://nuvoraone-source.github.io/img/nuvora-logo.png",
+      "email": "nuvora.one@gmail.com",
+      "description": "Nuvora entwickelt praktische Apps für Android und Windows."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nuvoraone-source.github.io/#site",
+      "url": "https://nuvoraone-source.github.io/",
+      "name": "Nuvora",
+      "inLanguage": "de",
+      "publisher": {
+        "@id": "https://nuvoraone-source.github.io/#org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "TrennCalc",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "description": "Kalkulations-App für Trennanlagen: Gewicht und Hubgewicht von Trennvorhängen und Trennwänden berechnen, zum Beispiel für Sporthallen und Turnhallen.",
+      "url": "https://play.google.com/store/apps/details?id=com.nuvora.trenncalc.lite",
+      "inLanguage": [
+        "de",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://nuvoraone-source.github.io/#org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "MouseMeter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows",
+      "softwareVersion": "1.4.0",
+      "description": "Misst Mausstrecke, Klicks und Tastenanschläge am PC. Portabel, die Daten bleiben lokal.",
+      "downloadUrl": "https://github.com/nuvoraone-source/MouseMeter/releases/tag/v1.4.0",
+      "url": "https://github.com/nuvoraone-source/MouseMeter",
+      "publisher": {
+        "@id": "https://nuvoraone-source.github.io/#org"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip" href="#apps">Zum Inhalt springen</a>
@@ -63,7 +130,7 @@
           <article class="card reveal" data-info="info-trenncalc">
             <div class="meta"><span class="tag">Android</span><span class="tag live">Verfügbar</span></div>
             <h3>TrennCalc</h3>
-            <p>Kalkulations-App für Trennanlagen. Berechnungen für Trennvorhänge und Trennwände schnell und nachvollziehbar am Handy.</p>
+            <p>Kalkulations-App für Trennanlagen. Gewicht und Hubgewicht von Trennvorhängen und Trennwänden schnell berechnen, zum Beispiel für Sporthallen und Turnhallen.</p>
             <div class="card-foot">
               <button class="more" type="button" data-open="info-trenncalc" aria-haspopup="dialog">Mehr erfahren <span aria-hidden="true">→</span></button>
               <div class="card-actions">
@@ -152,9 +219,10 @@
       <button class="close" type="button" aria-label="Schließen" data-close>×</button>
       <div class="meta"><span class="tag">Android</span><span class="tag live">Verfügbar</span></div>
       <h3 id="t-trenncalc">TrennCalc</h3>
-      <p class="info-intro">Die Kalkulations-App für Trennanlagen. Gewichte und Hubgewicht rechnest du direkt am Handy aus, statt von Hand oder in Tabellen.</p>
+      <p class="info-intro">Die Kalkulations-App für Trennanlagen und Trennvorhänge, zum Beispiel in Sporthallen, Turnhallen und Mehrzweckhallen. Gewichte und Hubgewicht rechnest du direkt am Handy aus, statt von Hand oder in Tabellen.</p>
       <ul>
         <li>Berechnet Gewicht Technik, Gewicht Behang, Gesamtgewicht und Hubgewicht</li>
+        <li>Gedacht für Trennvorhänge, Hallentrennwände und Trennanlagen in Sport-, Turn- und Mehrzweckhallen</li>
         <li>Erhältlich als Lite- und als Pro-Version</li>
         <li>Ergebnisse lassen sich als PNG-Bild exportieren</li>
         <li>Die Sprache richtet sich nach den Einstellungen deines Handys</li>
