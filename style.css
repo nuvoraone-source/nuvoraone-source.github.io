@@ -71,12 +71,20 @@ a { color: inherit; }
 .btn.ghost:hover { border-color: var(--gold); color: var(--gold); background: transparent; }
 .nav .btn { min-height: 38px; padding: 0 16px; font-size: 12px; }
 
-/* ---------- Sprachumschalter ---------- */
-.lang { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
-.lang a, .lang .cur { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; font: 500 12px/1 var(--sans); letter-spacing: 0.12em; text-decoration: none; }
-.lang a { color: var(--muted); }
-.lang a:hover { color: var(--gold-light); }
+/* ---------- Sprachumschalter (Pille mit Flaggen) ---------- */
+.lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--border); border-radius: 999px; }
+.lang a, .lang .cur { display: inline-flex; align-items: center; gap: 7px; min-height: 32px; padding: 0 12px 0 10px; border-radius: 999px; font: 500 12px/1 var(--sans); letter-spacing: 0.12em; text-decoration: none; }
+.lang a { color: var(--muted); transition: color .2s, background .2s; }
+.lang a:hover { color: var(--gold-light); background: rgba(201, 168, 76, 0.10); }
 .lang .cur { background: var(--gold); color: var(--black); }
+.flag { flex: none; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18); }
+@media (max-width: 480px) {
+  .lang a, .lang .cur { padding: 0 9px; }
+  .lang .code { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .logo img { height: 30px; }
+  .nav .wrap { gap: 10px; }
+}
+@media (max-width: 359px) { .nav-links .btn:not(.ghost) { display: none; } }
 
 /* ---------- Typografie ---------- */
 .eyebrow {
@@ -230,3 +238,78 @@ footer a:hover { color: var(--gold); }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .card, .btn { transition: none; }
 }
+
+/* ---------- Menü-Button mit leuchtendem, laufendem Rand ---------- */
+@property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.btn.glow {
+  position: relative; isolation: isolate; border: 0; background: var(--surface);
+  color: var(--gold-light); font-weight: 500;
+}
+.btn.glow::before, .btn.glow::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: conic-gradient(from var(--ang), transparent 0 55%, var(--gold) 75%, var(--gold-light) 88%, transparent 100%);
+  animation: glow-spin 3.2s linear infinite;
+}
+.btn.glow::before {
+  padding: 2px; z-index: 1;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+.btn.glow::after { inset: -2px; z-index: -1; filter: blur(7px); opacity: .75; }
+.btn.glow:hover { background: #1b1b1b; color: var(--white); }
+@keyframes glow-spin { to { --ang: 360deg; } }
+@media (prefers-reduced-motion: reduce) {
+  .btn.glow::before, .btn.glow::after { animation: none; }
+}
+@media (max-width: 359px) { .nav-links .btn.glow { display: inline-flex; padding: 0 12px; } }
+
+/* ---------- Rechner ---------- */
+.calc { padding: 48px 0 88px; }
+.calc .wrap { max-width: 860px; }
+.calc h1 { font-size: clamp(40px, 8vw, 72px); margin-bottom: 14px; }
+.calc .lead { color: rgba(245,245,245,.78); margin: 0 0 32px; max-width: 62ch; text-wrap: balance; }
+.calc-card { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 22px 18px; }
+.calc .row { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px; }
+.calc .row:last-child { margin-bottom: 0; }
+.calc .f { display: flex; flex-direction: column; gap: 6px; }
+.calc .f > span { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.calc select, .calc input[type="text"] {
+  width: 100%; min-height: 46px; padding: 0 14px; border-radius: 14px;
+  border: 1px solid var(--line); background: var(--surface2); color: var(--white);
+  font: 400 16px/1 var(--sans);
+}
+.calc select:focus, .calc input[type="text"]:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,.18); }
+.calc select:disabled { opacity: .6; }
+.calc .combo { display: flex; flex-direction: column; gap: 8px; }
+.calc .combo input[hidden] { display: none; }
+.calc-actions { margin-top: 22px; display: flex; justify-content: center; }
+.calc-actions .btn { min-width: 220px; min-height: 50px; background: var(--gold); color: var(--black); font-weight: 500; }
+.calc-actions .btn:hover { background: var(--gold-light); }
+.calc-actions .btn:disabled { opacity: .7; cursor: progress; }
+.calc-note { margin: 18px 0 0; padding: 12px 16px; border: 1px solid var(--gold); border-radius: 14px; color: var(--gold-light); text-align: center; }
+.calc-out { margin-top: 28px; }
+.calc-out h2 { font-size: 34px; margin-bottom: 14px; color: var(--gold); }
+.res { margin: 0; border-top: 1px solid var(--line); }
+.res > div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 2px; border-bottom: 1px solid var(--line); }
+.res dt { color: var(--muted); }
+.res dd { margin: 0; text-align: right; font-weight: 500; }
+.calc-hint { margin-top: 28px; font-size: 13px; color: var(--muted); }
+@media (min-width: 720px) {
+  .calc-card { padding: 30px 28px; }
+  .calc .row { grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+  .calc .row:has(> .f:only-child) { grid-template-columns: 1fr; }
+}
+
+/* Menü auf kleinen Displays: Logo darf nicht zusammengedrückt werden */
+.logo { flex-shrink: 0; }
+@media (max-width: 480px) {
+  .nav .wrap { gap: 8px; }
+  .nav-links { gap: 6px; }
+  .logo img { height: 28px; width: auto; }
+  .nav .btn.glow { padding: 0 12px; letter-spacing: .06em; }
+}
+@media (max-width: 340px) { .logo img { height: 24px; } .nav .btn.glow { padding: 0 9px; font-size: 11px; } }
+@media (max-width: 480px) { .nav-links .btn:not(.glow) { display: none; } }
+.legal h1 { font-size: clamp(34px, 8vw, 72px); overflow-wrap: anywhere; }
+.calc form > .f { margin-bottom: 14px; }
+@media (min-width: 720px) { .calc form > .f { margin-bottom: 18px; } }

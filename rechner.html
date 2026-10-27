@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrennCalc Pro Rechner – Trennvorhang Gewicht und Motor berechnen | Nuvora</title>
+  <meta name="description" content="Online-Rechner für Trennvorhänge und Hallentrennwände: Gewicht, Hubgewicht und passenden Getriebemotor für Sporthallen berechnen.">
+  <link rel="canonical" href="https://nuvoraone-source.github.io/rechner.html">
+  <link rel="alternate" hreflang="de" href="https://nuvoraone-source.github.io/rechner.html">
+  <link rel="alternate" hreflang="en" href="https://nuvoraone-source.github.io/en/calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TrennCalc Pro Rechner – Trennvorhang Gewicht und Motor berechnen | Nuvora">
+  <meta property="og:description" content="Online-Rechner für Trennvorhänge und Hallentrennwände: Gewicht, Hubgewicht und passenden Getriebemotor für Sporthallen berechnen.">
+  <meta property="og:url" content="https://nuvoraone-source.github.io/rechner.html">
+  <meta property="og:image" content="https://nuvoraone-source.github.io/img/og-image.png">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Nuvora, Startseite"><img src="img/nuvora-logo.png" alt="Nuvora" width="700" height="150"></a>
+      <nav class="nav-links"><a class="btn glow" href="rechner.html">Rechner</a> <a class="btn" href="index.html">Zurück</a> <span class="lang" role="group" aria-label="Sprache"><a href="en/calculator.html" lang="en" hreflang="en" title="English version"><svg class="flag" viewBox="0 0 60 40" width="18" height="12" aria-hidden="true" focusable="false"><rect width="60" height="40" fill="#1c3f94"/><path d="M0 0l60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0l60 40M60 0L0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7.5"/></svg><span class="code">EN</span></a><span class="cur" aria-current="true" lang="de"><svg class="flag" viewBox="0 0 5 3" width="18" height="12" aria-hidden="true" focusable="false"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#d00"/><rect y="2" width="5" height="1" fill="#ffce00"/></svg><span class="code">DE</span></span></span></nav>
+    </div>
+  </header>
+
+  <main class="calc">
+    <div class="wrap">
+      <h1>TrennCalc Pro Rechner</h1>
+      <p class="lead">Gewicht, Hubgewicht und Getriebemotor für Trennvorhänge und Hallentrennwände in Sport- und Turnhallen. Die Berechnung läuft auf dem Server, die Eingaben werden von Nuvora nicht gespeichert.</p>
+      <div class="calc-card">
+        <form id="calc-form" onsubmit="return false"></form>
+        <div class="calc-actions"><button type="button" class="btn" id="calc-btn"></button></div>
+        <p class="calc-note" id="calc-note" role="alert" hidden></p>
+      </div>
+      <div class="calc-out" id="calc-out" aria-live="polite" hidden></div>
+      <p class="calc-hint">Planungshilfe. Alle Angaben ohne Gewähr, bitte vor der Ausführung prüfen. Die Eingaben werden zur Berechnung an Cloudflare gesendet (siehe Datenschutz).</p>
+    </div>
+  </main>
+  <script src="config.js"></script>
+  <script src="rechner.js"></script>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Nuvora</span>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
